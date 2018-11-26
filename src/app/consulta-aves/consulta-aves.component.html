@@ -1,0 +1,28 @@
+<h2>Consulta Aves</h2>
+<div>
+    <!-- {{aves}} -->
+</div>
+
+<div id="search-component">
+        <h4>Nombre</h4>
+      
+        <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+      
+        <ul class="search-result">
+          <li *ngFor="let ave of aves$ | async" >
+            <a routerLink="/detail/{{ave.id}}">
+              {{ave.nombreComun}}
+            </a>
+          </li>
+        </ul>
+    </div>
+
+<div>
+    {{zona}}
+</div>
+
+<ul class="aves">
+  <li *ngFor="let ave of aves">
+    <span class="badge">{{ave.nombreComun}}</span> {{ave.nombreCientifico}}
+  </li>
+</ul>
